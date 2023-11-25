@@ -28,7 +28,7 @@ export class CustomerService {
   }
 
   updateCustomer(id: number, customer: Customer): Observable<void> {
-    const url = `${this.apiUrl}/customers/${id}`;
+    const url = `${this.apiUrl}/customers/UpdateCustomer/${id}`;
     return this.http.put<void>(url, customer);
   }
 

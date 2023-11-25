@@ -4,6 +4,7 @@ import { CustomerService } from '../../services/customer.service';
 import { Customer } from '../../models/customer.model';
 import { AddresssService } from '../../services/address.service';
 import { Address } from '../../models/address.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -18,7 +19,8 @@ export class CustomerListComponent implements OnInit {
   customerid: Customer | any;
   constructor(
     private customerService: CustomerService,
-    private addressService: AddresssService
+    private addressService: AddresssService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.loadCustomers();
@@ -52,5 +54,10 @@ export class CustomerListComponent implements OnInit {
         window.location.reload();
       },
     });
+  }
+
+  Edit(id: number) {
+
+    this.router.navigate(['/update-customer', id]);
   }
 }

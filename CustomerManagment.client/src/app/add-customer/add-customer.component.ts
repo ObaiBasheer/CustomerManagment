@@ -30,15 +30,12 @@ export class AddCustomerComponent implements OnInit {
     // Call the service to save the new customer
     this.customer.createCustomer(this.model).subscribe({
       next: (response) => {
-        // Handle success, e.g., show a success message
         console.log('Customer created successfully:', response);
 
-        this.router.navigate(['/customers']);
+        this.router.navigate(['/']);
 
-        // Clear the input field after successful creation
       },
       error: (error) => {
-        // Handle error, e.g., show an error message
         console.error('Error creating customer:', error);
       },
     });

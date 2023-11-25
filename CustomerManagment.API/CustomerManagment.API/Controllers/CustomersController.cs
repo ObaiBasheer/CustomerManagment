@@ -75,7 +75,7 @@ public class CustomersController : ControllerBase
     }
 
     // PUT: api/customers/5
-    [HttpPut("{id}")]
+    [HttpPut("UpdateCustomer/{id}")]
     public async Task<IActionResult> UpdateCustomer(int id, UpdateCustomerDto customer)
     {
         
@@ -83,8 +83,13 @@ public class CustomersController : ControllerBase
         {
             return BadRequest();
         }
+        var updatcustomer = new Customer
+        {
+            Id = id,
+            Name = customer.Name,
+        };
 
-        _context.Entry(customer).State = EntityState.Modified;
+        _context.Entry(updatcustomer).State = EntityState.Modified;
 
         try
         {

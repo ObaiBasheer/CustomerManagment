@@ -26,13 +26,11 @@ export class AddressListComponent {
   ngOnInit(): void {
     this.loadAddress();
 
-    // Set up an interval to periodically refresh data
     this.refreshSubscription = interval(60000) // Refresh every 5 seconds (adjust as needed)
       .subscribe(() => this.refreshData());
   }
 
   ngOnDestroy() {
-    // Unsubscribe from the interval when the component is destroyed
     if (this.refreshSubscription) {
       this.refreshSubscription.unsubscribe();
     }

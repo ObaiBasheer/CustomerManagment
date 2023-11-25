@@ -7,7 +7,8 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Adress</th>
-            <th scope="col">Action</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +22,9 @@
               <button (click)="Delete(x.id)" class="btn btn-danger">
                 Delete
               </button>
+            </td>
+            <td class="table-primary" [width]="20">
+              <button (click)="Edit(x.id)" class="btn btn-danger">Edit</button>
             </td>
           </tr>
         </tbody>
@@ -48,3 +52,4 @@
     </div>
   </div>
 </div>
+<div class="second" *ngIf="address.length == 0"></div>

@@ -32,7 +32,7 @@ namespace CustomerManagment.API.DTOs
             {
                 Id = address.Id,
                 Location = address.Location,
-                CustomerId = address.CustomerId,
+                CustomerName = address.Customer.Name,
 
             };
         }
