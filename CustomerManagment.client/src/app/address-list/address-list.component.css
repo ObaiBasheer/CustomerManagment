@@ -1,0 +1,7 @@
+.table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Light gray background for odd rows */
+}
+
+.table tbody tr:hover {
+  background-color: #d0e9c6; /* Light green background on hover */
+}

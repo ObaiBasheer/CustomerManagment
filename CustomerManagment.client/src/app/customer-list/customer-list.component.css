@@ -1,5 +1,17 @@
-.second{
-  float:right;
-  position: relative;
-  bottom: 111px;
+
+.table-container {
+  margin-top: 20px;
+}
+
+.table-container button {
+  margin-right: 5px;
+}
+
+.address-container {
+  margin-top: 20px;
+}
+
+.no-address-container {
+  margin-top: 20px;
+  text-align: center;
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container table-container">
   <div class="row">
     <div class="col-6">
       <table class="table table-secondary">
@@ -6,7 +6,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Adress</th>
+            <th scope="col">Address</th>
             <th scope="col">Delete</th>
             <th scope="col">Edit</th>
           </tr>
@@ -14,42 +14,44 @@
         <tbody>
           <tr *ngFor="let x of customers">
             <th scope="row">{{ x.id }}</th>
-            <td class="table-primary">{{ x.name }}</td>
-            <td class="table-primary">
-              <button (click)="GetAddreess(x.id)">Address</button>
+            <td>{{ x.name }}</td>
+            <td>
+              <button (click)="GetAddreess(x.id)" class="btn btn-primary">
+                Address
+              </button>
             </td>
-            <td class="table-primary" [width]="20">
+            <td>
               <button (click)="Delete(x.id)" class="btn btn-danger">
                 Delete
               </button>
             </td>
-            <td class="table-primary" [width]="20">
-              <button (click)="Edit(x.id)" class="btn btn-danger">Edit</button>
+            <td>
+              <button (click)="Edit(x.id)" class="btn btn-warning">Edit</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="col-6 second" *ngIf="address.length > 0">
-    <div>
-      <ul>
-        <table class="table table-success">
-          <thead>
-            <tr>
-              <th scope="col">id</th>
-              <th scope="col">Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let x of address">
-              <td class="table-info">{{ x.id }}</td>
-              <td class="table-info">{{ x.location }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </ul>
+
+    <div class="col-6 address-container" *ngIf="address.length > 0">
+      <table class="table table-success">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of address">
+            <td>{{ x.id }}</td>
+            <td>{{ x.location }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-6 no-address-container" *ngIf="address.length === 0">
+      <p>No address available</p>
     </div>
   </div>
 </div>
-<div class="second" *ngIf="address.length == 0"></div>

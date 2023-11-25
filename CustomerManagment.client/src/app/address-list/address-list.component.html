@@ -1,19 +1,19 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-    <div class="col-6">
-      <table class="table table-secondary">
-        <thead>
+    <div class="col-12">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
           <tr>
-            <th scope="col">id</th>
-            <th scope="col">location</th>
-            <th scope="col">customerName</th>
+            <th scope="col">ID</th>
+            <th scope="col">Location</th>
+            <th scope="col">Customer Name</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let x of addressWithCustomer">
-            <td class="table-primary">{{ x.id }}</td>
-            <td class="table-primary">{{ x.location }}</td>
-            <td class="table-primary">{{ x.customerName }}</td>
+            <td>{{ x.id }}</td>
+            <td>{{ x.location }}</td>
+            <td>{{ x.customerName }}</td>
           </tr>
         </tbody>
       </table>

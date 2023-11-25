@@ -54,7 +54,7 @@ public class CustomersController : ControllerBase
     [HttpPost("CreateCustomer")]
     public async Task<ActionResult<Customer>> CreateCustomer(CreateCustomerDto customer)
     {
-        if (customer == null) { return BadRequest(); }
+        if (string.IsNullOrEmpty(customer.Name)) { return BadRequest(); }
 
         var dupCustomer = _context.Customers.Any(x=>x.Name == customer.Name);
 

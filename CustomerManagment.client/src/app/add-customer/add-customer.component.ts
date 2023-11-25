@@ -27,17 +27,20 @@ export class AddCustomerComponent implements OnInit {
   saveCustomer(customerForm: any) {
     debugger;
     this.model = customerForm.value;
-    // Call the service to save the new customer
-    this.customer.createCustomer(this.model).subscribe({
-      next: (response) => {
-        console.log('Customer created successfully:', response);
+    if (this.model.name != '') {
+      // Call the service to save the new customer
+      this.customer.createCustomer(this.model).subscribe({
+        next: (response) => {
+          console.log('Customer created successfully:', response);
 
-        this.router.navigate(['/']);
-
-      },
-      error: (error) => {
-        console.error('Error creating customer:', error);
-      },
-    });
+          this.router.navigate(['/']);
+        },
+        error: (error) => {
+          console.error('Error creating customer:', error);
+        },
+      });
+    } else {
+      alert('Please add customer name');
+    }
   }
 }

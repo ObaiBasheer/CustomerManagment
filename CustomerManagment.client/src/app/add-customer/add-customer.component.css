@@ -1,6 +1,5 @@
-.name{
-  width: 300px;
-}
-.di{
-  margin: auto 0;
+.custom-input {
+  width: 50%; /* Set the input width to 100% */
+  border-color: #3498db; /* Add a custom border color */
+  color: #3498db; /* Set text color */
 }

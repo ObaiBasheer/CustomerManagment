@@ -38,17 +38,21 @@ export class UpdateCustomerComponent {
   saveCustomer(customerForm: any) {
     debugger;
     this.customer = customerForm.value;
-    this.customerservice
-      .updateCustomer(this.customerId, this.customer)
-      .subscribe({
-        next: (response) => {
-          console.log('Customer Update successfully:', response);
+    if (this.customer.name != '') {
+      this.customerservice
+        .updateCustomer(this.customerId, this.customer)
+        .subscribe({
+          next: (response) => {
+            console.log('Customer Update successfully:', response);
 
-          this.router.navigate(['/']);
-        },
-        error: (error) => {
-          console.error('Error creating customer:', error);
-        },
-      });
+            this.router.navigate(['/']);
+          },
+          error: (error) => {
+            console.error('Error creating customer:', error);
+          },
+        });
+    } else {
+      alert('Please add customer name');
+    }
   }
 }
