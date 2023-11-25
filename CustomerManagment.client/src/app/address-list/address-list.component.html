@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-secondary">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">location</th>
+            <th scope="col">customerId</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of addressWithCustomer">
+            <td class="table-primary">{{ x.id }}</td>
+            <td class="table-primary">{{ x.location }}</td>
+            <td class="table-primary">{{ x.customerId }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

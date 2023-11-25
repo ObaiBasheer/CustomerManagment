@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-secondary">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Adress</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of customers">
+            <th scope="row">{{ x.id }}</th>
+            <td class="table-primary">{{ x.name }}</td>
+            <td class="table-primary">
+              <button (click)="GetAddreess(x.id)">Address</button>
+            </td>
+            <td class="table-primary" [width]="20">
+              <button (click)="Delete(x.id)" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-6 second" *ngIf="address.length > 0">
+    <div>
+      <ul>
+        <table class="table table-success">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let x of address">
+              <td class="table-info">{{ x.id }}</td>
+              <td class="table-info">{{ x.location }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+  </div>
+</div>

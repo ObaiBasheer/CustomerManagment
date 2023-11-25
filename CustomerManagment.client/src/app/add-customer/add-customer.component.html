@@ -1,0 +1,18 @@
+<div class="container">
+  <form (ngSubmit)="saveCustomer(customerForm)" #customerForm="ngForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Customer Name</label>
+      <input
+        type="text"
+        class="form-control name"
+        id="name"
+        aria-describedby="name"
+        required
+        ngModel
+        name="name"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary m-auto">Submit</button>
+  </form>
+</div>
